@@ -1,0 +1,11 @@
+{
+    "filters":{
+    "dateFrom": "2023-05-15",
+    "dateTo": "2023-05-16",
+    "permission": null
+    },
+    "resultSet":{
+    "count": 0
+    },
+    "matches":[]
+    }
