@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
 <h3>HOŞGELDİNİZ!</h3>
@@ -26,7 +26,18 @@
     }else{
         echo "Şifre Girilmedi!";
     }
-    ?></h4>
+
+    ?>
+    <?php
+
+    $yonlendirilecekSayfa = "index2.html";
+    header("Location: " . $yonlendirilecekSayfa);
+    exit();
+
+    ?>
+   
+    
+    </h4>
 
 
     ANA SAYFAYA YÖNLENDİRİLİYORSUNUZ...

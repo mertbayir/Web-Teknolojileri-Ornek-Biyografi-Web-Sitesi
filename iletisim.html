@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00ff2a;" > 
         <div class="container">
-          <a class="navbar-brand" href="giris.html">Mert BAYIR </a>
+          <a class="navbar-brand" href="anasayfa.html">Mert BAYIR </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -45,16 +45,22 @@
       
     
       <div class="baslik"> 
+
         <br>
-      <br>
+        <br>
+
        <h4>İletişim Bilgilerinizi Giriniz...</h4>
+
        <br>
        <br>
+
        </div>
 
    
+
   
      <div class="kutu1">
+
       <br>
 
       <form name="form1"  >
@@ -69,17 +75,19 @@
       </div>
     
      
-<div class="kutu1">
+    <div class="kutu1">
 
-  <br>
+     <br>
 
-  <b> Elektronik Posta Adresiniz : </b> <br>
-        <input type="email" name="email">
+     <b> Elektronik Posta Adresiniz : </b> 
+     <br>
+
+     <input type="email" name="email">
     
-  <br>      
-<br>
+    <br>      
+    <br>
 
-</div>
+    </div>
 
       
 <div class="kutu1">
@@ -126,15 +134,17 @@
         
        <div class="kutu1">
 
-        <b> Okunuğunuz Bölüm Türünü Seçiniz :</b> <br>
+        <b> Okunuğunuz Bölüm Türünü Seçiniz :</b>
+
+        <br>
+
         <select name="okul">
          <option value="muh">Mühendislik</option>
          <option value="slk">Sağlık</option>
          <option value="kf" >Kimya/Fizik</option>
          <option value="any" >Diğer</option>
         </select>
-       
-        
+      
          <br>
          <br>
 
@@ -182,6 +192,26 @@
     
           
         <script src="js/bootstrap.bundle.min.js">
+
+
+    function FormKontrol(){
+    Name = document.getElementById("adi").value;
+    Lastname = document.getElementById("soyadi").value;
+    Email = document.getElementById("email").value;
+    
+    if (adi=="")
+        alert("Lütfen ad alanını doldurunuz.");
+    
+    if (soyadi=="")
+        alert("Lütfen Soyad alanını doldurunuz.");
+
+    if (email=="")
+        alert("Lütfen Email alanını doldurunuz.");
+        else
+        alert("Formda sorun yok")
+
+} 
+
         </script>
 </body>
 </html>
