@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login İşlemleri</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="logintasarim.css">
-
-    
-
+    <title>Login</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0061fd;" > 
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0061fd;" > 
         <div class="container">
           <a class="navbar-brand"  href="anasayfa.html">Mert BAYIR </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,82 +38,45 @@
           </div>
         </div>
       </nav>
-     
-
-      <form>
-
-       <div class="arka">
-
-        <div class="yazilar">
-
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        
-          <form action="login.php" formmethod="post" name="LoginForm">
-
-          <div class="sinir">
-                   
-            <label for="kullanici"> Kullanıcı Adı :</label> 
-        
-            <br>
-
-            <input type="text" name="kullanici" id="kullanici" placeholder="şifre giriniz..."  required >
-          
-            <br>
-            <br>
-          
-            <label for="sifre"> Şifre :</label> 
-          
-            <br>
-          
-            <input type="password" name="sifre" id="sifre" placeholder="şifre giriniz..." required >
-
-            <br>
-            <br>
-
-           <input type="submit" value="Giriş">
-               
-                
-          </div>        
-        </div>
-
-      </form>
-        
-        
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-      
-
-       </div>
 
 
+<?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $adi = $_POST["adi"];
+            $soyadi= $_POST["soyadi"];
+            $email = $_POST["email"];
+            $ilgiler = $_POST["ilgiler"];
+            $okul = $_POST["okul"];
+            $universiteler = $_POST["universiteler"];
+            $meslek = $_POST["meslek"];
+            $mesaj = $_POST["mesaj"];
+
+
+            echo "<p><strong>Ad:</strong> " . $adi . "</p>";
+            echo "<p><strong>Soy Ad:</strong> " . $soyadi . "</p>";
+            echo "<p><strong>E-posta:</strong> " . $email . "</p>";
+            echo "<p><strong>FAVORİ DERSLER:</strong></p>";
+            echo "<ul>";
+            foreach ($ilgiler as $ilgi) {
+                echo "<li>" . $ilgi . "</li>";
+            }
+            echo "</ul>";
+            echo "<p><strong>Üniversiteniz :</strong> " . $universiteler. "</p>";
+            echo "<p><strong>Öğrenim Durumunuz :</strong> " . $okul. "</p>";
+            echo "<p><strong>İşiniz :</strong> " . $meslek. "</p>";
+            echo "<p><strong>MESAJINIZ:</strong> " . $mesaj . "</p>";
+        }
+    ?>
+ 
     
+   
+        <form action="iletisim.html">
+         <input type="submit" name="back" value="İLTEİŞİM SAYFASINA DÖN.." >
         </form>
+   
 
-    
-        <script src="js/bootstrap.bundle.min.js"></script>
-        
 
+
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

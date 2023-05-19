@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00e1ff;" > 
         <div class="container">
-          <a class="navbar-brand" href="anasayfa.html">Mert BAYIR </a>
+          <a class="navbar-brand" href="index.html">Mert BAYIR </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -45,43 +45,22 @@
       <ul id="matchResults"></ul>
 
       <script src="js/bootstrap.bundle.min.js">
-        function getMatchResults() {
-            var apiKey = "9a81ac2ee483440fa3456a11b96dfaab";
-            var teamId = 123; // Takım kimlik numarasını buraya girin (API'de araştırarak bulabilirsiniz)
+      </script>
 
-            var apiUrl = 'https://api.football-data.org/v4/matches' + teamId + '/matches';
-            fetch(apiUrl, {
-                headers: {
-                    'X-Auth-Token': apiKey
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                var matchResults = document.getElementById('matchResults');
-                matchResults.innerHTML = '';
-
-                data.matches.forEach(match => {
-                    var li = document.createElement('li');
-                    li.textContent = match.homeTeam.name + ' ' + match.score.fullTime.homeTeam + ' - ' +
-                                     match.awayTeam.name + ' ' + match.score.fullTime.awayTeam;
-                    matchResults.appendChild(li);
-                });
-            })
-            .catch(error => console.log(error));
-        }
+      <script>
 
 function SakaGetir(){
     const settings = {
     async: true,
     crossDomain: true,
-    url: 'https://official-joke-api.appspot.com/random_joke',
+    url: 'https://api.football-data.org/v4/matches',
     method: 'GET',
 };
 
 $.ajax(settings).done(function (response) {
     $("#saka").text(response.punchline);
 });
-
+}
       </script>
 
 </body>

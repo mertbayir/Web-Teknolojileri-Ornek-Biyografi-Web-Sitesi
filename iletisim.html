@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00ff2a;" > 
         <div class="container">
-          <a class="navbar-brand" href="anasayfa.html">Mert BAYIR </a>
+          <a class="navbar-brand" href="index.html">Mert BAYIR </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -63,13 +63,13 @@
 
       <br>
 
-      <form name="form1"  >
-        <b> Adınız :</b> 
+      <form name="IletisimForm" action="iletisimgoster.php" method="post" >
+        <label for="adi">Adınız :</label>
         <br>
-        <input type="text" name="adi"><br>
-        <b> Soyadınız :</b> 
+        <input type="text" name="adi" id="adi" required><br>
+        <label for="soyadi"> Soyadınız :</label>
         <br>
-        <input type="text" name="soyadi">
+        <input type="text" name="soyadi" id="soyadi"required>
         <br>
         <br>
       </div>
@@ -79,16 +79,38 @@
 
      <br>
 
-     <b> Elektronik Posta Adresiniz : </b> 
+     <label for="email">E-posta Adresiniz :</label>
      <br>
 
-     <input type="email" name="email">
+     <input type="email" name="email" id="email"required>
     
     <br>      
     <br>
 
     </div>
 
+    <div class="kutu1">
+<br>
+      <b> İlgi Alanlarınız : </b> 
+
+      <br>
+      <br>
+ 
+      <input type="checkbox" name="ilgiler[]"
+      value="yazılım" >Yazılım<br>
+      <input type="checkbox" name="ilgiler[]"
+      value="oyun">Oyun<br>
+      <input type="checkbox" name="ilgiler[]"
+      value="spor">Spor<br>
+      <input type="checkbox" name="ilgiler[]"
+      value="seyahat">Seyahat<br>
+      
+
+
+     <br>      
+     <br>
+ 
+     </div>
       
 <div class="kutu1">
 
@@ -97,11 +119,11 @@
 
   <b>Eğitim Durumunuzu Seçiniz :</b> <br>
     
-  <input type="radio" name="okul" value="orta">Ortaokul <br>
-  <input type="radio" name="okul" value="lise">Lise <br>
-  <input type="radio" name="okul" value="onlisans">Önlisans  <br>
-  <input type="radio" name="okul" value="lisans">Lisans <br>
-  <input type="radio" name="okul" value="ylisans">Yüksek Lisans
+  <input type="radio" name="okul[]" value="orta" selected>Ortaokul <br>
+  <input type="radio" name="okul[]" value="lise">Lise <br>
+  <input type="radio" name="okul[]" value="onlisans">Önlisans  <br>
+  <input type="radio" name="okul[]" value="lisans">Lisans <br>
+  <input type="radio" name="okul[]" value="ylisans">Yüksek Lisans
 
  
   <br>
@@ -117,15 +139,12 @@
 
   <b> Okuduğunuz Üniversiteyi Seçiniz (Sadece Sakarya'da okuyanlar işaretlemeli): </b> <br>
     
-        <input type="text" list="universiteler">
-         <datalist id="universiteler">
-        <option value="SAÜ">
-          Sakarya Üniveristesi
-         </option>
-         <option value="SUBÜ">
-          Sakarya Uyg. Bil. Üniversitesi
-         </option>
-        </datalist>
+  <select name="universiteler">
+    <option value="">-</option>
+    <option value="saü">Sakarya Üniversitesi</option>
+    <option value="subü">Sakarya Uyg.Bil.Üniversitesi</option>
+    
+   </select>
 
         <br>
         <br>
@@ -138,7 +157,7 @@
 
         <br>
 
-        <select name="okul">
+        <select name="meslek">
          <option value="muh">Mühendislik</option>
          <option value="slk">Sağlık</option>
          <option value="kf" >Kimya/Fizik</option>
@@ -182,7 +201,9 @@
 
 <br>
 <br>
-          <input type="submit" value="Gönder...">
+<input type="submit" value="Gönder">
+<input type="reset" value="Temizle">
+<button type="button" onclick="FormKontrol()">Formu Denetle...</button>
 <br>
 <br>
 
@@ -191,27 +212,40 @@
       </form> 
     
           
-        <script src="js/bootstrap.bundle.min.js">
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <script>
 
 
-    function FormKontrol(){
-    Name = document.getElementById("adi").value;
-    Lastname = document.getElementById("soyadi").value;
-    Email = document.getElementById("email").value;
+        function FormKontrol(){
+          adi = document.getElementById("adi").value;
+          soyadi = document.getElementById("soyadi").value;
+          email = document.getElementById("email").value;
+          
+          if (adi=="")
+        {
+          alert("Lütfen ad alanını doldurunuz.");
+        }
+             
+          
+          else if (soyadi=="")
+          {
+            alert("Lütfen Soyad alanını doldurunuz.");
+          }
+              
+      
+          else if (email=="") {
+              alert("Lütfen Email alanını doldurunuz.");
+          }
+         else
+           {   alert("Formda sorun yok")  }
+      
+      }
+
     
-    if (adi=="")
-        alert("Lütfen ad alanını doldurunuz.");
-    
-    if (soyadi=="")
-        alert("Lütfen Soyad alanını doldurunuz.");
-
-    if (email=="")
-        alert("Lütfen Email alanını doldurunuz.");
-        else
-        alert("Formda sorun yok")
-
-} 
-
         </script>
+
+
+
 </body>
 </html>

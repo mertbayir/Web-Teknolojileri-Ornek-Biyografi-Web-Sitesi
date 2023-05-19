@@ -7,40 +7,46 @@
     <title>Login</title>
 </head>
 <body>
-<h3>HOŞGELDİNİZ!</h3>
-    <h4>ADINIZ:
+
     <?php
-    if(isset($_POST["kullanici"])=='B221210040' && $_POST["kullanici"]=='B221210040' )
+
+    if($_SERVER['REQUEST_METHOD']=='POST')
     {
-        echo $_POST["kullanici"];
-    }else{
-        echo "Ad Hatalı Veya Girilmedi!";
-    }
-    ?></h4>
 
-    <h4>ŞİFRENİZ:
-    <?php
-    if(isset($_POST["sifre"])=='123456' && $_POST["sifre"]=='123456')
+        $kullanici=$_POST['kullanici'];
+        $sifre=$_POST['sifre'];
+        $email=$_POST['e-mail'];
+
+
+       if(  $kullanici == 'B221210040' && $sifre == '123456' )
+       {
+            echo "Hoşgeldiniz... ";
+            echo "Kullanıcı Adı... B221210040";
+            echo "Şifre... 123456";
+            header ("Refresh:4 ; Location:index.html");
+            exit();
+
+    } 
+
+    else
+
     {
-        echo $_POST["sifre"];
-    }else{
-        echo "Şifre Girilmedi!";
+        echo  " HATALI GİRİŞ , LOGİN SAYFASINA YÖNLENDİRİLİYORSUNUZ...!";
+        header("Refresh:4 ; Location: login.html");
+        exit();
     }
 
-    ?>
-    <?php
+}
 
-    $yonlendirilecekSayfa = "index2.html";
-    header("Location: " . $yonlendirilecekSayfa);
-    exit();
+else 
+{
+ 
+  echo " BOŞ BIRAKMAYINIZ..!";
+ 
+}
+?>
+  
 
-    ?>
-   
-    
-    </h4>
-
-
-    ANA SAYFAYA YÖNLENDİRİLİYORSUNUZ...
-
+  
 </body>
 </html>
