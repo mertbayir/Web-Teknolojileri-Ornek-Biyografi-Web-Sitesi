@@ -1,16 +1,16 @@
 .baslik
 {
     text-align: center;
-    color:#00066f;
+    color:#49dbde;
     border-style: dashed;
     border-width:2px ;
-    border-color:rgb(157, 0, 0);
+    border-color:rgb(242, 111, 111);
 }
 
 .yazi
 {
     font-size: 20px ;
-    border-style: solid;
-    border-width: 5px ;
-    border-color:rgb(157, 0, 0);
+    border-style: outset;
+    border-width: 4px ;
+    border-color:rgb(46, 246, 106);
 }
