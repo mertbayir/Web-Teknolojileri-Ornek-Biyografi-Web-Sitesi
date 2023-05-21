@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2af059;" > 
-    <div class="container" >
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1ad194;" > 
+    <div class="container">
       <a class="navbar-brand" href="giris.html">Mert BAYIR </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,41 +39,26 @@
     </div>
   </nav>
 
-    <?php
-
-    if($_SERVER['REQUEST_METHOD']=='POST')
-    {
-
-        $kullanici=$_POST['kullanici'];
-        $sifre=$_POST['sifre'];
-        $email=$_POST['e-mail'];
 
 
-       if(  $kullanici == 'B221210040' && $sifre == '123456' )
-       {
-            echo "Hoşgeldiniz... ";
-            echo "Kullanıcı Adı... B221210040";
-            echo "Şifre... 123456";
-            header ("Refresh:4 ; Location:index.html");
-            exit();
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   
+    $kullaniciAdi = $_POST["kullanici"];
+    $sifre = $_POST["sifre"];
 
-    } 
-
-    else
-
-    {
-        echo  " HATALI GİRİŞ , LOGİN SAYFASINA YÖNLENDİRİLİYORSUNUZ...!";
-        header("Refresh:4 ; Location: login.html");
+   
+    if ($kullaniciAdi == "B221210040" && $sifre == "123456") 
+    { 
+        echo("Hoşgeldiniz... <br>");
+        echo("Kullanıcı Adı : B221210040 <br>");
+        echo("Şifre : 123456 <br>");
+        header("refresh:3 ; url= giris.html");
         exit();
+    } else {
+        echo "Kullanıcı adı veya şifre hatalı. Login sayfasına yönlendiriliyorsunuz ... ";
+        header("refresh:3 ; url= login.html");
     }
-
-}
-
-else 
-{
- 
-  echo " BOŞ BIRAKMAYINIZ..!";
- 
 }
 ?>
   

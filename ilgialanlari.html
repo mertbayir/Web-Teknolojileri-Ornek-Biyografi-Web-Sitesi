@@ -40,28 +40,10 @@
         </div>
       </nav>
 
-      <h1>Takımın Son Maç Sonuçları</h1>
-      <button onclick="getMatchResults()">Sonuçları Getir</button>
-      <ul id="matchResults"></ul>
+<h1>Denedim,olmadı,herkese teşekkürler...</h1>
 
-      <script src="js/bootstrap.bundle.min.js">
-      </script>
-
-      <script>
-
-function SakaGetir(){
-    const settings = {
-    async: true,
-    crossDomain: true,
-    url: 'https://api.football-data.org/v4/matches',
-    method: 'GET',
-};
-
-$.ajax(settings).done(function (response) {
-    $("#saka").text(response.punchline);
-});
-}
-      </script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+  
 
 </body>
 </html>

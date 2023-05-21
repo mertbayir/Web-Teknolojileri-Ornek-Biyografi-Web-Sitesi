@@ -41,6 +41,7 @@
 
 
 <?php
+       
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $adi = $_POST["adi"];
             $soyadi= $_POST["soyadi"];
@@ -52,26 +53,28 @@
             $mesaj = $_POST["mesaj"];
 
 
-            echo "<p><strong>Ad:</strong> " . $adi . "</p>";
-            echo "<p><strong>Soy Ad:</strong> " . $soyadi . "</p>";
-            echo "<p><strong>E-posta:</strong> " . $email . "</p>";
-            echo "<p><strong>FAVORİ DERSLER:</strong></p>";
+            echo "<p><strong>Adınız :</strong> " . $adi . "</p>";
+            echo "<p><strong>Soyadınız :</strong> " . $soyadi . "</p>";
+            echo "<p><strong>E-postanız :</strong> " . $email . "</p>";
+            echo "<p><strong>İlgileriniz :</strong></p>";
             echo "<ul>";
             foreach ($ilgiler as $ilgi) {
                 echo "<li>" . $ilgi . "</li>";
             }
             echo "</ul>";
             echo "<p><strong>Üniversiteniz :</strong> " . $universiteler. "</p>";
-            echo "<p><strong>Öğrenim Durumunuz :</strong> " . $okul. "</p>";
-            echo "<p><strong>İşiniz :</strong> " . $meslek. "</p>";
-            echo "<p><strong>MESAJINIZ:</strong> " . $mesaj . "</p>";
+            foreach ($okul as $okullar) {
+                echo "<p><strong>Eğitim Durumunuz </strong>:" . $okullar ."</p>";
+            }
+            echo "<p><strong>Bölümünüz :</strong> " . $meslek. "</p>";
+            echo "<p><strong>Mesajınız:</strong> " . $mesaj . "</p>";
         }
     ?>
  
     
    
         <form action="iletisim.html">
-         <input type="submit" name="back" value="İLTEİŞİM SAYFASINA DÖN.." >
+         <input type="submit" name="back" value="İLETİŞİM SAYFASINA DÖN..." >
         </form>
    
 

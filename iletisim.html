@@ -97,13 +97,13 @@
       <br>
  
       <input type="checkbox" name="ilgiler[]"
-      value="yazılım" >Yazılım<br>
+      value="Yazılım" >Yazılım<br>
       <input type="checkbox" name="ilgiler[]"
-      value="oyun">Oyun<br>
+      value="Oyun">Oyun<br>
       <input type="checkbox" name="ilgiler[]"
-      value="spor">Spor<br>
+      value="Spor">Spor<br>
       <input type="checkbox" name="ilgiler[]"
-      value="seyahat">Seyahat<br>
+      value="Seyahat">Seyahat<br>
       
 
 
@@ -118,12 +118,10 @@
   <br>
 
   <b>Eğitim Durumunuzu Seçiniz :</b> <br>
-    
-  <input type="radio" name="okul[]" value="orta" selected>Ortaokul <br>
-  <input type="radio" name="okul[]" value="lise">Lise <br>
-  <input type="radio" name="okul[]" value="onlisans">Önlisans  <br>
-  <input type="radio" name="okul[]" value="lisans">Lisans <br>
-  <input type="radio" name="okul[]" value="ylisans">Yüksek Lisans
+  
+  <input type="radio" name="okul[]" id="okul1" value="Ön Lisans">Önlisans  <br>
+  <input type="radio" name="okul[]" id="okul2" value="Lisans">Lisans <br>
+  <input type="radio" name="okul" id="okul3" value="Yüksek Lisans">Yüksek Lisans
 
  
   <br>
@@ -141,8 +139,8 @@
     
   <select name="universiteler">
     <option value="">-</option>
-    <option value="saü">Sakarya Üniversitesi</option>
-    <option value="subü">Sakarya Uyg.Bil.Üniversitesi</option>
+    <option value="Sakarya Üniversitesi">Sakarya Üniversitesi</option>
+    <option value="Sakarya Uyg. Bil. Üniversitesi">Sakarya Uyg.Bil.Üniversitesi</option>
     
    </select>
 
@@ -159,15 +157,14 @@
         <br>
 
         <select name="meslek">
-         <option value="muh">Mühendislik</option>
-         <option value="slk">Sağlık</option>
-         <option value="kf" >Kimya/Fizik</option>
-         <option value="any" >Diğer</option>
+         <option value="">-</option>
+         <option value="Mühendislik">Mühendislik</option>
+         <option value="Sağlık">Sağlık</option>
+         <option value="Kimya / Fizik" >Kimya/Fizik</option>
+         <option value=" Diğer" >Diğer</option>
         </select>
-      
          <br>
          <br>
-
        </div>
     
     
@@ -225,21 +222,21 @@
           
           if (adi=="")
         {
-          alert("Lütfen ad alanını doldurunuz.");
+          alert("Lütfen Ad Alanını Doldurunuz.");
         }
              
           
           else if (soyadi=="")
           {
-            alert("Lütfen Soyad alanını doldurunuz.");
+            alert("Lütfen Soyad Alanını Doldurunuz.");
           }
               
       
           else if (email=="") {
-              alert("Lütfen Email alanını doldurunuz.");
+              alert("Lütfen Email Alanını Doldurunuz.");
           }
          else
-           {   alert("Formda sorun yok")  }
+           {   alert("Formda Sorun Yok")  }
       
       }
 
